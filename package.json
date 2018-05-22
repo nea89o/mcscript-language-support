@@ -1,0 +1,26 @@
+{
+    "name": "mcscript-language-support",
+    "displayName": "Mcscript language support",
+    "description": "Adds Language support for mcscript",
+    "version": "0.0.1",
+    "publisher": "romangraef",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "mcscript",
+            "aliases": ["Mcscript", "mcscript"],
+            "extensions": ["mcs", "mcscript"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "mcscript",
+            "scopeName": "source.mcscript",
+            "path": "./syntaxes/mcscript.json"
+        }]
+    }
+}

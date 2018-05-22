@@ -1,0 +1,51 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "patterns": [{
+            "name": "keyword",
+            "match": "\\b(as|at|if|offset|run|store|unless|align|x|xy|xz|y|yx|yz|z|zy|zx|xyz|xzy|yxz|yzx|zyx|zxy|asat|dimension)\\b"
+        },
+        {
+            "name": "string.quoted",
+            "match": "\"(?:[^\"\\\\]|\\\\.)*\"",
+            "captures": {
+                "1": {
+                    "patterns": [{
+                        "name": "string.interpolated",
+                        "match": "\\$\\([^)]+\\)"
+                    }]
+                }
+            }
+        },
+        {
+            "name": "keyword.operator",
+            "match": "({|}|!|=|,|#|//|\\(|\\)|\\[|\\]|\\.\\.)"
+        },
+        {
+            "name": "mcscript.selector",
+            "match": "(@[parse])",
+            "captures": {
+                "1": {
+                    "name": "constant.other"
+                }
+            }
+        },
+        {
+            "name": "mcscript.commandcall",
+            "match": "(/[a-z]+\\b).*",
+            "captures": {
+                "1": {
+                    "name": "support.function"
+                }
+            }
+        },
+        {
+            "name": "constant.numeric",
+            "match": "([0-9]+)"
+        }
+    ],
+    "scopeName": "source.mcscript",
+    "fileTypes": [
+        "mcscript",
+        "mcs"
+    ]
+}
